@@ -25,7 +25,7 @@ function path(username) { //hassle-free way to generate the paths
 	return savePath + username + ".jpg"; //.png was breaking for some images
 }
 
-function grabIcon(username, force) { //grabs the user's icon from GitHub and saves it in an images folder, if it's not already there - force is a bool whether or not to force overwrite
+function grabIcon(username, force, callback) { //grabs the user's icon from GitHub and saves it in an images folder, if it's not already there - force is a bool whether or not to force overwrite
 	force = force || false; //default to no force, meaning won't overwrite images if it exists already - will save time and resources, etc.
 
 	if (!force && fs.existsSync(path(username))) { //if the user doesn't want to force override and the file exists
@@ -45,6 +45,7 @@ function grabIcon(username, force) { //grabs the user's icon from GitHub and sav
 
 			request(avOptions, function() {
 				console.log("Image " + path(username) + " saved");
+				callback(username);
 			}).pipe(fs.createWriteStream(path(username)));
 
 		}
