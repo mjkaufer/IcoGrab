@@ -27,7 +27,7 @@ function path(username) { //hassle-free way to generate the paths
 
 function grabIcon(username, force, callback) { //grabs the user's icon from GitHub and saves it in an images folder, if it's not already there - force is a bool whether or not to force overwrite
 	force = force || false; //default to no force, meaning won't overwrite images if it exists already - will save time and resources, etc.
-
+	callback = callback || function(){};
 	if (!force && fs.existsSync(path(username))) { //if the user doesn't want to force override and the file exists
 		console.log("Image " + username + ".png exists!")
 		return; //stop doing stuff - we don't want to overwrite
