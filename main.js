@@ -30,6 +30,7 @@ function grabIcon(username, force, callback) { //grabs the user's icon from GitH
 	callback = callback || function(){};
 	if (!force && fs.existsSync(path(username))) { //if the user doesn't want to force override and the file exists
 		console.log("Image " + username + ".png exists!")
+		callback(username, false);
 		return; //stop doing stuff - we don't want to overwrite
 	}
 
@@ -58,7 +59,7 @@ function grabIcon(username, force, callback) { //grabs the user's icon from GitH
 
 mkdir(savePath);
 
-grabIcon("mjkaufer", true, function(username){
+grabIcon("mjkaufer", true, function(username, worked){
 	//stuff
 });
 // grabIcon("pwstegman", true);

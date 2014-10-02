@@ -21,6 +21,6 @@
   },
   "homepage": "https://github.com/mjkaufer/IcoGrab",
   "dependencies": {
-    "request": "^2.44.0"
+    "request": "~2.44.0"
   }
 }
