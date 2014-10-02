@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/mjkaufer/IcoGrab/issues"
   },
-  "homepage": "https://github.com/mjkaufer/IcoGrab"
+  "homepage": "https://github.com/mjkaufer/IcoGrab",
+  "dependencies": {
+    "unirest": "^0.2.7"
+  }
 }
