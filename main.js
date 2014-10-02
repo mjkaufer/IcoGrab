@@ -22,7 +22,7 @@ function makeOptions(u){
 }
 
 function path(username){//hassle-free way to generate the paths
-	return savePath + username + ".png";
+	return savePath + username + ".jpg";//.png was breaking for some images
 }
 
 function grabIcon(username, force){//grabs the user's icon from GitHub and saves it in an images folder, if it's not already there - force is a bool whether or not to force overwrite
@@ -44,7 +44,7 @@ function grabIcon(username, force){//grabs the user's icon from GitHub and saves
 			var avOptions = makeOptions(avatar);
 
 			request(avOptions, function(){
-				console.log("Image " + username + ".png saved");
+				console.log("Image " + path(username) + " saved");
 			}).pipe(fs.createWriteStream(path(username)));
 
 		}
@@ -58,4 +58,4 @@ function grabIcon(username, force){//grabs the user's icon from GitHub and saves
 mkdir(savePath);
 
 grabIcon("mjkaufer",true);
-grabIcon("pwstegman");
+grabIcon("pwstegman", true);
