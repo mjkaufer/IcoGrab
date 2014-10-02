@@ -46,7 +46,7 @@ function grabIcon(username, force, callback) { //grabs the user's icon from GitH
 
 			request(avOptions, function() {
 				console.log("Image " + path(username) + " saved");
-				callback(username);
+				callback(username, true);
 			}).pipe(fs.createWriteStream(path(username)));
 
 		}
