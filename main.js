@@ -35,7 +35,7 @@ function grabIcon(username, force, callback) { //grabs the user's icon from GitH
 
 	var options = makeOptions("https://api.github.com/users/" + username);
 
-	var callback = function(error, response, body) {
+	var callback2 = function(error, response, body) {
 		if (!error && response.statusCode == 200) {
 			body = JSON.parse(body);
 			var avatar = body.avatar_url;
@@ -51,12 +51,14 @@ function grabIcon(username, force, callback) { //grabs the user's icon from GitH
 		}
 	};
 
-	request(options, callback);
+	request(options, callback2);
 
 }
 
 
 mkdir(savePath);
 
-grabIcon("mjkaufer", true);
-grabIcon("pwstegman", true);
+grabIcon("mjkaufer", true, function(username){
+	//stuff
+});
+// grabIcon("pwstegman", true);
