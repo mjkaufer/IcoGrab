@@ -27,7 +27,7 @@ function grabIcon(username, force){//grabs the user's icon from GitHub and saves
 
 	var options = makeOptions('https://api.github.com/users/' + username);
 
-	function callback(error, response, body) {
+	var callback = function(error, response, body) {
 		if (!error && response.statusCode == 200) {
 			body = JSON.parse(body);
 			var avatar = body.avatar_url;
