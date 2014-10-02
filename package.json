@@ -21,6 +21,6 @@
   },
   "homepage": "https://github.com/mjkaufer/IcoGrab",
   "dependencies": {
-    "unirest": "^0.2.7"
+    "request": "^2.44.0"
   }
 }
